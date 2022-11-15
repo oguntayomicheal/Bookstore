@@ -1,14 +1,14 @@
 // action
-const RemoveBook = 'bookstore/src/redux/books/RemoveBook';
-const AddBook = 'bookstore/src/redux/books/AddBook';
+const REMOVE__BOOK = 'bookstore/src/redux/books/REMOVE__BOOK';
+const ADD__BOOK = 'bookstore/src/redux/books/ADD__BOOK';
 
 export const addBook = (book) => ({
-  type: AddBook,
+  type: ADD__BOOK,
   book,
 });
 
 export const removeBook = (id) => ({
-  type: RemoveBook,
+  type: REMOVE__BOOK,
   id,
 });
 
@@ -16,9 +16,9 @@ export const removeBook = (id) => ({
 
 export const bookReducer = (state = [], action) => {
   switch (action.type) {
-    case AddBook:
+    case ADD__BOOK:
       return [...state, action.book];
-    case RemoveBook:
+    case REMOVE__BOOK:
       return state.filter((book) => book.id !== action.id);
     default:
       return state;
