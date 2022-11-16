@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Book from './Book';
 import { useSelector } from 'react-redux';
+import Book from './Book';
 
 const Allbooks = () => {
-  // const books = { props };
-  // const booksArray = books.props.booklist;
-
-  const booksArray = useSelector((state) => state.books)
+  const booksArray = useSelector((state) => state.books);
 
   return (
     <div>

@@ -1,4 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';// action
+import { v4 as uuidv4 } from 'uuid';
+// action
 
 const REMOVE__BOOK = 'bookstore/src/redux/books/REMOVE__BOOK';
 const ADD__BOOK = 'bookstore/src/redux/books/ADD__BOOK';
