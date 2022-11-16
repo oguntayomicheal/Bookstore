@@ -1,4 +1,8 @@
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
+
 function Book(props) {
+  const dispatch = useDispatch();
   const books = { props };
   const eachBook = books.props.book;
 
@@ -12,7 +16,14 @@ function Book(props) {
         <em>{eachBook.author}</em>
       </span>
       {' '}
-      <button type="button">Delete</button>
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(removeBook(eachBook.id));
+        }}
+      >
+        Delete
+      </button>
     </li>
   );
 }
