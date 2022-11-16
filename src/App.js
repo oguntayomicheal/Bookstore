@@ -7,11 +7,6 @@ import Allbooks from './components/Allbooks';
 import InputForm from './components/InputForm';
 
 function App() {
-  const [booklists] = useState([
-    { id: 1, title: 'Book 1', author: 'Author one' },
-    { id: 2, title: 'Book 2', author: 'Author two' },
-  ]);
-
   return (
     <div className="App">
 
@@ -23,7 +18,7 @@ function App() {
           path="/"
           element={(
             <>
-              <Allbooks booklist={booklists} />
+              <Allbooks />
               <InputForm />
             </>
 )}

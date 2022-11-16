@@ -1,4 +1,5 @@
-// action
+import { v4 as uuidv4 } from 'uuid';// action
+
 const REMOVE__BOOK = 'bookstore/src/redux/books/REMOVE__BOOK';
 const ADD__BOOK = 'bookstore/src/redux/books/ADD__BOOK';
 
@@ -14,7 +15,23 @@ export const removeBook = (id) => ({
 
 // Reducers
 
-export const bookReducer = (state = [], action) => {
+const bookList = [
+  {
+    id: uuidv4(),
+    title: 'Hello',
+    author: 'Daniel',
+  }, {
+    id: uuidv4(),
+    title: 'Welcome',
+    author: 'Samuel',
+  }, {
+    id: uuidv4(),
+    title: 'How',
+    author: 'Mike',
+  },
+];
+
+export const bookReducer = (state = bookList, action) => {
   switch (action.type) {
     case ADD__BOOK:
       return [...state, action.book];
