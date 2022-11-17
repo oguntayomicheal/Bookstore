@@ -8,25 +8,32 @@ const InputForm = () => {
 
   return (
     <div>
-      <input type="text" placeholder="Title" id="title" />
-      <input type="text" placeholder="Author" id="author" />
-      <button
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(addBook(
-            {
-              id: uuidv4(),
-              title: document.getElementById('title').value,
-              author: document.getElementById('author').value,
-            },
-          ));
-          document.getElementById('title').value = '';
-          document.getElementById('author').value = '';
-        }}
-      >
-        ADD SCORE
-      </button>
+      <form>
+        <input type="text" placeholder="Title" id="title" required />
+        <input type="text" placeholder="Author" id="author" required />
+        <button
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            const bookTitle = document.getElementById('title').value;
+            const bookAuthor = document.getElementById('author').value;
+            if (bookTitle !== '' && bookAuthor !== '') {
+              dispatch(addBook(
+                {
+                  id: uuidv4(),
+                  title: bookTitle,
+                  author: bookAuthor,
+                },
+              ));
+              document.getElementById('title').value = '';
+              document.getElementById('author').value = '';
+            }
+          }}
+        >
+          ADD SCORE
+        </button>
+      </form>
+
     </div>
   );
 };
