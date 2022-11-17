@@ -1,11 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { v4 as uuidv4 } from 'uuid';
-// action
 
 const REMOVE__BOOK = 'bookstore/src/redux/books/REMOVE__BOOK';
 const ADD__BOOK = 'bookstore/src/redux/books/ADD__BOOK';
 const FETCH__BOOK = 'bookstore/src/redux/books/FETCH__BOOK';
-const fetchUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g9zeM8PZcRnuqLGRDIob/books';
+const fetchUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZKr4o7crbyvX8CJic1hN/books';
 
 export const addBook = createAsyncThunk(ADD__BOOK, async (addBook, { dispatch }) => {
   await fetch(fetchUrl, {
@@ -20,7 +18,7 @@ export const addBook = createAsyncThunk(ADD__BOOK, async (addBook, { dispatch })
 });
 
 export const removeBook = createAsyncThunk(REMOVE__BOOK, async (itemId, { dispatch }) => {
-  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g9zeM8PZcRnuqLGRDIob/books/${itemId}`, {
+  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZKr4o7crbyvX8CJic1hN/books/${itemId}`, {
     method: 'DELETE',
   });
   dispatch({
