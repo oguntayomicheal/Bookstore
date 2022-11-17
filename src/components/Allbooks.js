@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
-const Allbooks = (props) => {
-  const books = { props };
-  const booksArray = books.props.booklist;
+const Allbooks = () => {
+  const booksArray = useSelector((state) => state.books);
 
   return (
     <div>

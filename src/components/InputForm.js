@@ -1,11 +1,41 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 
-const InputForm = () => (
-  <div>
-    <input type="text" placeholder="Title" />
-    <input type="text" placeholder="Author" />
-    <button type="submit">ADD SCORE</button>
-  </div>
-);
+const InputForm = () => {
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <form>
+        <input type="text" placeholder="Title" id="title" required />
+        <input type="text" placeholder="Author" id="author" required />
+        <button
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            const bookTitle = document.getElementById('title').value;
+            const bookAuthor = document.getElementById('author').value;
+            if (bookTitle !== '' && bookAuthor !== '') {
+              dispatch(addBook(
+                {
+                  id: uuidv4(),
+                  title: bookTitle,
+                  author: bookAuthor,
+                },
+              ));
+              document.getElementById('title').value = '';
+              document.getElementById('author').value = '';
+            }
+          }}
+        >
+          ADD SCORE
+        </button>
+      </form>
+
+    </div>
+  );
+};
 
 export default InputForm;
