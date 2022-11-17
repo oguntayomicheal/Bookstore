@@ -5,10 +5,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const REMOVE__BOOK = 'bookstore/src/redux/books/REMOVE__BOOK';
 const ADD__BOOK = 'bookstore/src/redux/books/ADD__BOOK';
 const FETCH__BOOK = 'bookstore/src/redux/books/FETCH__BOOK';
+const fetchUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g9zeM8PZcRnuqLGRDIob/books';
 
-export const addBook = (book) => ({
-  type: ADD__BOOK,
-  book,
+export const addBook = createAsyncThunk(ADD__BOOK, async (addBook, { dispatch }) => {
+  await fetch(fetchUrl, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(addBook),
+  });
+  dispatch({
+    type: ADD__BOOK,
+    book: addBook,
+  });
 });
 
 export const removeBook = (id) => ({
@@ -34,7 +42,6 @@ export const bookReducer = (state = bookList, action) => {
 };
 
 // Action to getbook from API
-const fetchUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/g9zeM8PZcRnuqLGRDIob/books';
 
 export const fetchBooks = createAsyncThunk(FETCH__BOOK, async (post, { dispatch }) => {
   const response = await fetch(fetchUrl);
