@@ -18,8 +18,9 @@ function Book(props) {
       {' '}
       <button
         type="button"
+        id={eachBook.item_id}
         onClick={() => {
-          dispatch(removeBook(eachBook.id));
+          dispatch(removeBook(eachBook.item_id));
         }}
       >
         Delete

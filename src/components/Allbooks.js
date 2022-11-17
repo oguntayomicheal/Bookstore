@@ -5,11 +5,12 @@ import { fetchBooks } from '../redux/books/books';
 
 const Allbooks = () => {
   const dispatch = useDispatch();
-  const booksArray = useSelector((state) => state.books);
 
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
+
+  const booksArray = useSelector((state) => state.books);
 
   return (
     <div>
