@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './css/Navbar.css';
+import { IoIosPerson } from 'react-icons/io';
 
 function Navbar() {
   return (
-    <div id="Navbar">
-      <h1>BookStore</h1>
-      <nav>
-        <Link to="/">Books</Link>
-        <Link to="/categories">Categories</Link>
-      </nav>
+    <div className="main-nav">
+      <div id="Navbar" className="panel-bg">
+        <div id="page-head">
+          <h1 className="Bookstore-CMS">BookStore CMS</h1>
+          <nav>
+            <Link to="/" className="BOOKS">Books</Link>
+            <Link to="/categories" className="CATEGORIES">Categories</Link>
+          </nav>
+        </div>
+        <button className="profile-icon" type="button">
+          <IoIosPerson className="userIcon" />
+        </button>
+
+      </div>
     </div>
   );
 }
