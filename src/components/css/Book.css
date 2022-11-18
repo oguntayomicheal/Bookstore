@@ -26,11 +26,14 @@ li {
   font-family: Montserrat, serif;
   font-size: 0.875rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
+}
+
+.font-style {
+  font-stretch: normal;
+  font-style: normal;
 }
 
 .Title {
@@ -40,8 +43,6 @@ li {
   font-family: RobotoSlab, serif;
   font-size: 1.375rem;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: -0.2px;
   color: var(--black-two);
@@ -54,8 +55,6 @@ li {
   font-family: RobotoSlab, serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
@@ -68,8 +67,6 @@ li {
   font-family: RobotoSlab, serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
@@ -84,7 +81,7 @@ li {
   padding: 20px 10px 20px 20px;
 }
 
-.acts {
+.align-flex {
   display: flex;
   align-items: center;
 }
@@ -98,8 +95,6 @@ li {
 
 .progress {
   width: 25%;
-  display: flex;
-  align-items: center;
   justify-content: center;
   gap: 5px;
 }
@@ -116,8 +111,6 @@ li {
   font-family: Montserrat, serif;
   font-size: 2rem;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
@@ -130,8 +123,6 @@ li {
   font-family: Montserrat, serif;
   font-size: 0.875rem;
   font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
@@ -160,8 +151,6 @@ li {
   font-family: RobotoSlab, serif;
   font-size: 0.813rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
@@ -173,8 +162,6 @@ li {
   font-family: RobotoSlab, serif;
   font-size: 1rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
   line-height: normal;
   letter-spacing: -0.4px;
   color: var(--black-two);

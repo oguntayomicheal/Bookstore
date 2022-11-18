@@ -17,12 +17,10 @@
   height: 5.938rem;
   padding: 10px;
   background-color: #fff;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-#page-head {
+.flex {
   display: flex;
   align-items: center;
 }

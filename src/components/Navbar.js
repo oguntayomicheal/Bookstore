@@ -5,8 +5,8 @@ import { IoIosPerson } from 'react-icons/io';
 function Navbar() {
   return (
     <div className="main-nav">
-      <div id="Navbar" className="panel-bg">
-        <div id="page-head">
+      <div id="Navbar" className="panel-bg flex">
+        <div className="flex">
           <h1 className="Bookstore-CMS">BookStore CMS</h1>
           <nav>
             <Link to="/" className="BOOKS">Books</Link>
