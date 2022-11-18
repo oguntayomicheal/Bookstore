@@ -20,9 +20,10 @@ const InputForm = () => {
             if (bookTitle !== '' && bookAuthor !== '') {
               dispatch(addBook(
                 {
-                  id: uuidv4(),
+                  item_id: uuidv4(),
                   title: bookTitle,
                   author: bookAuthor,
+                  category: 'None',
                 },
               ));
               document.getElementById('title').value = '';
